@@ -1,0 +1,192 @@
+# first pc1 reno pc2 vegas
+
+weihanl@pc1:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.1 port 54668 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  59.2 MBytes  99.4 Mbits/sec
+[  3]  5.0-10.0 sec  54.0 MBytes  90.6 Mbits/sec
+[  3] 10.0-15.0 sec  55.8 MBytes  93.5 Mbits/sec
+[  3] 15.0-20.0 sec  55.8 MBytes  93.5 Mbits/sec
+[  3] 20.0-25.0 sec  54.9 MBytes  92.1 Mbits/sec
+[  3] 25.0-30.0 sec  54.9 MBytes  92.1 Mbits/sec
+[  3] 30.0-35.0 sec  55.9 MBytes  93.7 Mbits/sec
+[  3] 35.0-40.0 sec  55.8 MBytes  93.5 Mbits/sec
+[  3] 40.0-45.0 sec  54.9 MBytes  92.1 Mbits/sec
+[  3] 45.0-50.0 sec  55.0 MBytes  92.3 Mbits/sec
+[  3]  0.0-50.0 sec   556 MBytes  93.2 Mbits/sec
+w
+
+
+weihanl@pc2:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.2.2 port 53366 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  3.12 MBytes  5.24 Mbits/sec
+[  3]  5.0-10.0 sec  1.50 MBytes  2.52 Mbits/sec
+[  3] 10.0-15.0 sec  1.62 MBytes  2.73 Mbits/sec
+[  3] 15.0-20.0 sec  1.38 MBytes  2.31 Mbits/sec
+[  3] 20.0-25.0 sec  2.00 MBytes  3.36 Mbits/sec
+[  3] 25.0-30.0 sec  1.50 MBytes  2.52 Mbits/sec
+[  3] 30.0-35.0 sec  1.62 MBytes  2.73 Mbits/sec
+[  3] 35.0-40.0 sec  1.50 MBytes  2.52 Mbits/sec
+[  3] 40.0-45.0 sec  24.9 MBytes  41.7 Mbits/sec
+[  3] 45.0-50.0 sec  57.0 MBytes  95.6 Mbits/sec
+[  3]  0.0-50.0 sec  96.1 MBytes  16.1 Mbits/sec
+w
+
+[  4] local 10.10.3.2 port 5001 connected with 10.10.1.1 port 54668
+[  5] local 10.10.3.2 port 5001 connected with 10.10.2.2 port 53366
+[  4]  0.0-50.2 sec   556 MBytes  93.0 Mbits/sec
+[  5]  0.0-50.0 sec  96.1 MBytes  16.1 Mbits/sec
+
+
+# first pc1 reno pc2 reno
+weihanl@pc1:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.1 port 54670 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  59.1 MBytes  99.2 Mbits/sec
+[  3]  5.0-10.0 sec  39.9 MBytes  66.9 Mbits/sec
+[  3] 10.0-15.0 sec  28.5 MBytes  47.8 Mbits/sec
+[  3] 15.0-20.0 sec  28.4 MBytes  47.6 Mbits/sec
+[  3] 20.0-25.0 sec  26.8 MBytes  44.9 Mbits/sec
+[  3] 25.0-30.0 sec  30.0 MBytes  50.3 Mbits/sec
+[  3] 30.0-35.0 sec  27.6 MBytes  46.3 Mbits/sec
+[  3] 35.0-40.0 sec  26.8 MBytes  44.9 Mbits/sec
+[  3] 40.0-45.0 sec  29.2 MBytes  49.1 Mbits/sec
+[  3] 45.0-50.0 sec  28.4 MBytes  47.6 Mbits/sec
+[  3]  0.0-50.1 sec   325 MBytes  54.4 Mbits/sec
+w
+
+weihanl@pc2:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.2.2 port 53368 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  24.5 MBytes  41.1 Mbits/sec
+[  3]  5.0-10.0 sec  30.5 MBytes  51.2 Mbits/sec
+[  3] 10.0-15.0 sec  28.0 MBytes  47.0 Mbits/sec
+[  3] 15.0-20.0 sec  28.4 MBytes  47.6 Mbits/sec
+[  3] 20.0-25.0 sec  26.5 MBytes  44.5 Mbits/sec
+[  3] 25.0-30.0 sec  30.4 MBytes  51.0 Mbits/sec
+[  3] 30.0-35.0 sec  28.2 MBytes  47.4 Mbits/sec
+[  3] 35.0-40.0 sec  26.8 MBytes  44.9 Mbits/sec
+[  3] 40.0-45.0 sec  36.5 MBytes  61.2 Mbits/sec
+[  3] 45.0-50.0 sec  58.2 MBytes  97.7 Mbits/sec
+[  3]  0.0-50.1 sec   318 MBytes  53.3 Mbits/sec
+w
+
+[  4] local 10.10.3.2 port 5001 connected with 10.10.1.1 port 54670
+[  5] local 10.10.3.2 port 5001 connected with 10.10.2.2 port 53368
+[  4]  0.0-50.4 sec   325 MBytes  54.0 Mbits/sec
+[  5]  0.0-50.2 sec   318 MBytes  53.1 Mbits/sec
+
+
+
+# first pc1 reno pc2 cubic
+
+weihanl@pc1:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.1 port 54672 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  58.9 MBytes  98.8 Mbits/sec
+[  3]  5.0-10.0 sec  37.4 MBytes  62.7 Mbits/sec
+[  3] 10.0-15.0 sec  28.5 MBytes  47.8 Mbits/sec
+[  3] 15.0-20.0 sec  25.5 MBytes  42.8 Mbits/sec
+[  3] 20.0-25.0 sec  26.4 MBytes  44.2 Mbits/sec
+[  3] 25.0-30.0 sec  27.2 MBytes  45.7 Mbits/sec
+[  3] 30.0-35.0 sec  28.5 MBytes  47.8 Mbits/sec
+[  3] 35.0-40.0 sec  26.6 MBytes  44.7 Mbits/sec
+[  3] 40.0-45.0 sec  26.6 MBytes  44.7 Mbits/sec
+[  3] 45.0-50.0 sec  28.2 MBytes  47.4 Mbits/sec
+[  3]  0.0-50.1 sec   314 MBytes  52.6 Mbits/sec
+w
+
+weihanl@pc2:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.2.2 port 53370 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  30.1 MBytes  50.5 Mbits/sec
+[  3]  5.0-10.0 sec  28.0 MBytes  47.0 Mbits/sec
+[  3] 10.0-15.0 sec  30.9 MBytes  51.8 Mbits/sec
+[  3] 15.0-20.0 sec  29.9 MBytes  50.1 Mbits/sec
+[  3] 20.0-25.0 sec  28.4 MBytes  47.6 Mbits/sec
+[  3] 25.0-30.0 sec  28.0 MBytes  47.0 Mbits/sec
+[  3] 30.0-35.0 sec  30.9 MBytes  51.8 Mbits/sec
+[  3] 35.0-40.0 sec  29.9 MBytes  50.1 Mbits/sec
+[  3] 40.0-45.0 sec  35.5 MBytes  59.6 Mbits/sec
+[  3] 45.0-50.0 sec  57.6 MBytes  96.7 Mbits/sec
+[  3]  0.0-50.0 sec   329 MBytes  55.2 Mbits/sec
+w
+
+[  4] local 10.10.3.2 port 5001 connected with 10.10.1.1 port 54672
+[  5] local 10.10.3.2 port 5001 connected with 10.10.2.2 port 53370
+[  4]  0.0-50.3 sec   314 MBytes  52.3 Mbits/sec
+[  5]  0.0-50.1 sec   329 MBytes  55.1 Mbits/sec
+
+
+
+# first pc1 reno pc2 bbr
+
+weihanl@pc1:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size: 85.0 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.1 port 54674 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  59.0 MBytes  99.0 Mbits/sec
+[  3]  5.0-10.0 sec  20.2 MBytes  34.0 Mbits/sec
+[  3] 10.0-15.0 sec  2.50 MBytes  4.19 Mbits/sec
+[  3] 15.0-20.0 sec  35.8 MBytes  60.0 Mbits/sec
+[  3] 20.0-25.0 sec  53.5 MBytes  89.8 Mbits/sec
+[  3] 25.0-30.0 sec  31.9 MBytes  53.5 Mbits/sec
+[  3] 30.0-35.0 sec  7.38 MBytes  12.4 Mbits/sec
+[  3] 35.0-40.0 sec  30.4 MBytes  51.0 Mbits/sec
+[  3] 40.0-45.0 sec  54.6 MBytes  91.6 Mbits/sec
+[  3] 45.0-50.0 sec  38.2 MBytes  64.2 Mbits/sec
+[  3]  0.0-50.4 sec   334 MBytes  55.5 Mbits/sec
+w
+
+weihanl@pc2:~$ iperf -c pc3 -t 50 -i 5
+------------------------------------------------------------
+Client connecting to pc3, TCP port 5001
+TCP window size:  128 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.2.2 port 53372 connected with 10.10.3.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 5.0 sec  56.2 MBytes  94.4 Mbits/sec
+[  3]  5.0-10.0 sec  53.0 MBytes  88.9 Mbits/sec
+[  3] 10.0-15.0 sec  6.88 MBytes  11.5 Mbits/sec
+[  3] 15.0-20.0 sec  4.12 MBytes  6.92 Mbits/sec
+[  3] 20.0-25.0 sec  38.5 MBytes  64.6 Mbits/sec
+[  3] 25.0-30.0 sec  48.0 MBytes  80.5 Mbits/sec
+[  3] 30.0-35.0 sec  12.4 MBytes  20.8 Mbits/sec
+[  3] 35.0-40.0 sec  4.12 MBytes  6.92 Mbits/sec
+[  3] 40.0-45.0 sec  31.9 MBytes  53.5 Mbits/sec
+[  3] 45.0-50.0 sec  56.2 MBytes  94.4 Mbits/sec
+[  3]  0.0-50.0 sec   311 MBytes  52.2 Mbits/sec
+w
+
+[  4] local 10.10.3.2 port 5001 connected with 10.10.1.1 port 54674
+[  5] local 10.10.3.2 port 5001 connected with 10.10.2.2 port 53372
+[  4]  0.0-52.2 sec   334 MBytes  53.6 Mbits/sec
+[  5]  0.0-50.2 sec   311 MBytes  52.0 Mbits/sec
